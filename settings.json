@@ -1,0 +1,21 @@
+{
+  "samples" : {
+    "ttbar": "/afs/cern.ch/user/s/skandel/skandel/Run3ttMET/DNN/datanewmodel/inputs/ttbar_WEIGHTS.csv",
+    "VV": "/afs/cern.ch/user/s/skandel/skandel/Run3ttMET/DNN/datanewmodel/inputs/VV_WEIGHTS.csv",
+    "dm90": "/afs/cern.ch/user/s/skandel/skandel/Run3ttMET/DNN/datanewmodel/inputs/signal_dm90.csv",
+    "dm120": "/afs/cern.ch/user/s/skandel/skandel/Run3ttMET/DNN/datanewmodel/inputs/signal_dm120.csv",
+    "dm150": "/afs/cern.ch/user/s/skandel/skandel/Run3ttMET/DNN/datanewmodel/inputs/signal_dm150.csv",
+    "dm165": "/afs/cern.ch/user/s/skandel/skandel/Run3ttMET/DNN/datanewmodel/inputs/signal_dm165.csv"
+  },
+  "in_dir": "",
+  "model_dir": "model_out",
+  "plot_dir": "plots",
+  "train_config":{
+    "dm": [150, 165],
+    "bjet": 1,
+    "oddeven": "even",
+    "n_epochs": 120,
+    "batch_size": 256
+  }
+
+}
