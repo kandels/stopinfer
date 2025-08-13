@@ -218,7 +218,7 @@ top = Sample("ttbar", kYellow)
 if options.doTheoSyst:
         top.suffixTreeName = "_THEORY"
 top.setStatConfig(useStat)
-#top.addSampleSpecificWeight(cList3b.isPrompt)
+top.addSampleSpecificWeight(cList3b.isPrompt)
 top.addSampleSpecificWeight("(nlep==2)")
 if options.createRegionHist == '' and options.createSampleHist == '':
         top.setNormRegions([(f"CRTOP{options.region}1b{options.period}", "cuts")])
@@ -231,7 +231,7 @@ if top.name == "ttbar_Sh":
 
 
 Diboson = Sample("VV", kMagenta+2)
-#Diboson.addSampleSpecificWeight(cList3b.isPrompt)
+Diboson.addSampleSpecificWeight(cList3b.isPrompt)
 Diboson.setNormByTheory()
 Diboson.setStatConfig(useStat)
 if options.createRegionHist == '' and options.createSampleHist == '':
@@ -240,30 +240,30 @@ if options.createRegionHist == '' and options.createSampleHist == '':
 
 
 ttZ = Sample("ttZ", kBlue)
-#ttZ.addSampleSpecificWeight(cList3b.isPrompt)
+ttZ.addSampleSpecificWeight(cList3b.isPrompt)
 ttZ.setStatConfig(useStat)
 
 print("suffixTreeName: ", ttZ.suffixTreeName)
 
 singletop = Sample("Wt_dyn_DR", kRed)
-#singletop.addSampleSpecificWeight(cList3b.isPrompt)
+singletop.addSampleSpecificWeight(cList3b.isPrompt)
 singletop.addSampleSpecificWeight("(nlep==2)")
 singletop.setNormByTheory()
 singletop.setStatConfig(useStat)
 
 Zjets = Sample("Zjets_Sh", kSpring)
-#Zjets.addSampleSpecificWeight(cList3b.isPrompt)
+Zjets.addSampleSpecificWeight(cList3b.isPrompt)
 Zjets.addSampleSpecificWeight("(nlep==2)")
 Zjets.setNormByTheory()
 Zjets.setStatConfig(useStat)
 
 others = Sample("other", kGreen+4)
-#others.addSampleSpecificWeight(cList3b.isPrompt)
+others.addSampleSpecificWeight(cList3b.isPrompt)
 others.setNormByTheory()
 others.setStatConfig(useStat)
 
 MCFakes = Sample("MCFakes", kOrange)
-#MCFakes.addSampleSpecificWeight(cList3b.isNOPrompt)
+MCFakes.addSampleSpecificWeight(cList3b.isNOPrompt)
 # MCFakes.addSampleSpecificWeight("("+cList3b.removeSherpa+")") # fix it later
 MCFakes.setNormByTheory()
 MCFakes.setStatConfig(useStat)
@@ -284,7 +284,7 @@ if options.doSyst:
 
 
 data = Sample("data_NONE", kBlack)
-data.prefixTreeName = "data_NONE"  # CRITICAL: Set tree name prefix
+data.prefixTreeName = "data_NONE"  
 data.setStatConfig(True)
 data.setData()
 
@@ -303,7 +303,7 @@ else:                                bkt = configMgr.addFitConfig("BkgOnly")
 
 if (myFitType == FitType.Exclusion) or (myFitType == FitType.Discovery):
     sigSample = Sample(options.signal, kPink)
-    sigSample.prefixTreeName = options.signal  # CRITICAL: Set tree name prefix
+    sigSample.prefixTreeName = options.signal
     sigSample.addInputs(ntupFilessig)
     sigSample.suffixTreeName = "_WEIGHTS"
     sigSample.setNormFactor("mu_SIG", 1., 0., 10.)
